@@ -1,6 +1,5 @@
 buildscript {
 	ext {
-		kotlinVersion = '1.1.60'
 		springBootVersion = '2.0.0.BUILD-SNAPSHOT'
 	}
 	repositories {
@@ -10,13 +9,10 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
 	}
 }
 
-apply plugin: 'kotlin'
-apply plugin: 'kotlin-spring'
+apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
@@ -24,12 +20,6 @@ apply plugin: 'io.spring.dependency-management'
 group = 'Cambrian'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
-compileKotlin {
-	kotlinOptions.jvmTarget = "1.8"
-}
-compileTestKotlin {
-	kotlinOptions.jvmTarget = "1.8"
-}
 
 repositories {
 	mavenCentral()
@@ -40,13 +30,12 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-security')
+//	compile('org.springframework.boot:spring-boot-starter-security')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-webflux')
     compile('mysql:mysql-connector-java')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8")
-	compile("org.jetbrains.kotlin:kotlin-reflect")
+	compile("com.h2database:h2")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('io.projectreactor:reactor-test')
-	testCompile('org.springframework.security:spring-security-test')
+//	testCompile('org.springframework.security:spring-security-test')
 }
