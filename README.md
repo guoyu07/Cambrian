@@ -1,4 +1,4 @@
 ## Cambrian
 
 ### LICENSE
-[MIT](https://github.com/Metatom/Cambrian/blob/master/LICENSE)
+[GPL](https://github.com/Metatom/Cambrian/blob/master/LICENSE)
